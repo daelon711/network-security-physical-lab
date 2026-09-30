@@ -94,6 +94,8 @@ networking hardware in a real-world environment.
 ### 2.3 Network Diagram
 
 <!-- [Image: Network diagram] -->
+<img width="786" height="496" alt="network diagram" src="https://github.com/user-attachments/assets/ccc59103-fbb9-4999-8c30-ce8d017788c5" />
+
 
 ## 3. Hardware Setup
 
@@ -140,10 +142,19 @@ default gateway for all VLANs and performs inter-VLAN routing between the differ
 #### 4.1.1 VLAN interface overview
 
 <!-- [Image: VLAN interface overview screenshot] -->
+<img width="938" height="143" alt="VLAN interface overview" src="https://github.com/user-attachments/assets/d78ec902-39e1-4960-9fa3-89198c07fbb2" />
+
 
 #### 4.1.2 VLAN interface configuration
 
 <!-- [Image: VLAN interface configuration screenshots (Employee, DMZ, Admin, Guest)] -->
+<img width="399" height="372" alt="VLAN interface configuration" src="https://github.com/user-attachments/assets/93e49cb8-5620-4207-93d5-246c62f1661b" />
+<img width="452" height="309" alt="VLAN interface configuration" src="https://github.com/user-attachments/assets/b854153f-5252-4cb6-9893-26d9edec3bcd" />
+<img width="359" height="420" alt="VLAN interface configuration" src="https://github.com/user-attachments/assets/b815c2b1-9df2-4a2b-9abf-338fe33344b1" />
+<img width="429" height="451" alt="VLAN interface configuration" src="https://github.com/user-attachments/assets/94399fce-7841-4217-96d6-ff3a9d3aebb7" />
+
+
+
 
 ### 4.2 DHCP Configuration
 
@@ -154,12 +165,14 @@ systems in the DMZ network.
 
 | VLAN | DHCP Range | Gateway | DNS |
 |---|---|---|---|
-| Employee | 10.0.10.2 – 10.0.10.254 | 10.0.10.1 | System DNS |
+| Employee | 10.0.10.2 - 10.0.10.254 | 10.0.10.1 | System DNS |
 | DMZ | Static IPs used | 10.0.20.1 | System DNS |
-| Admin | 10.0.30.2 – 10.0.30.254 | 10.0.30.1 | System DNS |
-| Guest | 10.0.40.2 – 10.0.40.254 | 10.0.40.1 | System DNS |
+| Admin | 10.0.30.2 - 10.0.30.254 | 10.0.30.1 | System DNS |
+| Guest | 10.0.40.2 - 10.0.40.254 | 10.0.40.1 | System DNS |
 
 <!-- [Image: DHCP lease table screenshot] -->
+<img width="873" height="240" alt="DHCP lease" src="https://github.com/user-attachments/assets/860e2129-2f33-44c4-b57e-cc186cb45453" />
+
 
 ### 4.3 NAT Configuration
 
@@ -178,6 +191,8 @@ DMZ web server using a Virtual IP.
 #### 4.3.1. NAT and firewall policy configuration
 
 <!-- [Image: FortiGate policy list screenshot] -->
+<img width="679" height="482" alt="FortiGate policy list" src="https://github.com/user-attachments/assets/4193cd6d-d5ea-43ef-8bbb-5f590fd21aa3" />
+
 
 ### 4.4 Firewall Rules
 
@@ -204,19 +219,29 @@ permitted by existing firewall rules.
 #### 4.4.1 Firewall policies allowing Admin, Employee, Guest, and LAN internet access
 
 <!-- [Image: Admin-to-Internet, Employee-to-Internet and Guest-to-Internet policy screenshots] -->
+<img width="744" height="810" alt="admin-employee-guest" src="https://github.com/user-attachments/assets/2a21acc7-327a-4a43-bf2a-0e24caad5785" />
+
 
 #### 4.4.2 Firewall rules blocking DMZ access to Employee and Admin networks
 
 <!-- [Image: Block-Guest-to-Internal and Block-Guest-to-DMZ policy screenshots] -->
+<img width="862" height="287" alt="dmz-guest" src="https://github.com/user-attachments/assets/4ec79bed-875c-42c2-b53f-4510e9add0cf" />
+<img width="438" height="284" alt="dmz-guest" src="https://github.com/user-attachments/assets/3a88c038-c76e-47e2-a959-b5738f17f679" />
+
 
 #### 4.4.3 Firewall rules restricting Employee access to the Admin network and allowing access to 
 the DMZ web server
 
 <!-- [Image: Block-Guest-to-Admin policy screenshot] -->
+<img width="420" height="303" alt="Block-Guest-to-Admin" src="https://github.com/user-attachments/assets/de32c610-0403-4002-a616-77fff4623703" />
+
+
 
 #### 4.4.4 Firewall rule enforcing Guest network isolation while allowing internet access
 
 <!-- [Image: Block-Employee-to-Admin, Block-DMZ-to-Employee and Internet-to-WebServer policy screenshots] -->
+<img width="333" height="466" alt="policies" src="https://github.com/user-attachments/assets/56c5fa1b-fea6-4b91-96db-c0fe61a44331" />
+
 
 ## 5. Switch Configuration
 
@@ -236,6 +261,8 @@ specific department or security zone within the network.
 #### 5.1.1 VLANs created on the Cisco SF200-24 managed switch
 
 <!-- [Image: Cisco SF200-24 Create VLAN screenshot] -->
+<img width="609" height="332" alt="csico" src="https://github.com/user-attachments/assets/9a2c61a9-a6e3-4873-8ab4-390d34e8563b" />
+
 
 ### 5.2 Port Assignment and Trunk Configuration
 
@@ -254,6 +281,8 @@ ports were configured to carry multiple VLANs between the switch and the Fortine
 #### 5.2.1 Port VLAN membership and trunk configuration on the Cisco switch
 
 <!-- [Image: Port VLAN Membership table screenshot] -->
+<img width="730" height="364" alt="vlan ports" src="https://github.com/user-attachments/assets/1ea47f8f-dc91-49af-b695-79f4451886ee" />
+
 
 ## 6. Server Configuration
 
@@ -278,6 +307,8 @@ The test client used for this verification was connected to the Admin VLAN with 
 #### 6.1.1 DMZ web server reachable on port 80
 
 <!-- [Image: Browser showing http://10.0.20.10 and PowerShell ipconfig output] -->
+<img width="810" height="312" alt="browser" src="https://github.com/user-attachments/assets/cf23c2c5-c008-4b97-9ea9-e922a04b6b95" />
+
 
 ## 7. Testing and Validation
 
@@ -301,19 +332,27 @@ verify that the firewall policies and VLAN segmentation were functioning correct
 
 <!-- [Image: PowerShell curl.exe https://google.com output] -->
 
+<img width="749" height="137" alt="internet-employee" src="https://github.com/user-attachments/assets/2903b69d-43a6-4ee7-b9f8-8ae39a1e7250" />
+
 ##### 7.1.1.2 Guest can reach internet
 
 <!-- [Image: PowerShell curl.exe https://example.com output] -->
+<img width="762" height="112" alt="internet-guest" src="https://github.com/user-attachments/assets/220eaf95-4203-4d0c-a772-43d8bd82d8e8" />
+
 
 ##### 7.1.1.3 Guest cannot reach internal networks
 
 <!-- [Image: PowerShell ping output to 10.0.10.4, 10.0.30.4 and 10.0.20.10] -->
+<img width="552" height="451" alt="ping" src="https://github.com/user-attachments/assets/c064c4d0-16e9-4aa1-b402-5349918bf99b" />
+
 
 ### 7.2 Evidence
 
 #### 7.2.1 Guest VLAN Restrictions
 
 <!-- [Image: Guest client network settings, Google loaded, and Admin VLAN site unreachable] -->
+<img width="715" height="429" alt="guest-client" src="https://github.com/user-attachments/assets/cbb8c1ea-decf-4749-9da4-ca617eaeba71" />
+
 
 The Guest VLAN client received an IP address in the 10.0.40.0/24 subnet and was able to 
 access the internet successfully. Access attempts to internal resources such as the Admin 
@@ -322,6 +361,8 @@ VLAN were blocked by firewall rules.
 #### 7.2.2 Employee Access to DMZ Web Server
 
 <!-- [Image: Employee client network settings and DMZ web server page] -->
+<img width="637" height="380" alt="employee-dmz" src="https://github.com/user-attachments/assets/7cd78eca-f91e-4a19-a56a-2505af559632" />
+
 
 The Employee VLAN client successfully accessed the DMZ web server hosted at 10.0.20.10 
 over HTTP. This confirms that the firewall policy allowing Employee-to-DMZ web traffic was 
@@ -330,6 +371,8 @@ functioning correctly.
 #### 7.2.3 Admin VLAN Full Access
 
 <!-- [Image: Admin client accessing the switch and FortiGate interfaces, with PowerShell ipconfig output] -->
+<img width="672" height="378" alt="admin-vlan" src="https://github.com/user-attachments/assets/85737e28-3ceb-477c-a12d-a10ab7afa82a" />
+
 
 The Admin VLAN device was able to access all configured VLANs and services. Firewall policies 
 granted unrestricted access from the Admin network for management and testing purposes.
